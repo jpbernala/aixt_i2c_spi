@@ -17,7 +17,7 @@ const push = u8(2) // Push button pin
 const led = u8(7) // LED pin
 
 uart.setup(115200)          // Initialize serial port
-uart.println('Initializing SPI master...')
+uart.println('Initializing SPI master...')+
 
 pin.setup(push, pin.input)  // Button pin as input
 pin.setup(led, pin.output)  // Pin of the LED as output

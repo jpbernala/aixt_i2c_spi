@@ -16,7 +16,8 @@
         "Arduino/arduino-AVR",
         "Arduino/arduino-generic",
         "Arduino/arduino-generic-UART",
-        "Arduino/arduino-generic-i2c"
+        "Arduino/arduino-generic-i2c",
+        "Arduino/arduino-generic-spi"
     ],
     "v_defines": [
     ],
