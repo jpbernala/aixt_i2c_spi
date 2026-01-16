@@ -66,10 +66,8 @@ import spi
 
 spi.begin()                       // Initialize SPI
 
-// Configure transaction settings
-settings := SPISettings(1000000, MSBFIRST, SPI_MODE0)
-
-spi.begin_transaction(settings)   // Start transaction
+// Start transaction
+spi.begin_transaction(settings)   // Start transaction with settings
 data1 := spi.transfer(0x01)       // Transfer data
 data2 := spi.transfer(0x02)       // Transfer data
 spi.end_transaction()             // End transaction
@@ -89,8 +87,8 @@ pin.setup(pin.d10, pin.output)    // Setup CS (chip select) pin
 pin.low(pin.d10)                  // CS LOW
 
 // Read data
-cmd := spi.transfer(0x03)         // Send read command
-addr := spi.transfer(0x00)        // Send address
+spi.transfer(0x03)                // Send read command
+spi.transfer(0x00)                // Send address
 data := spi.transfer(0x00)        // Read data (send dummy byte)
 
 // Deselect device
