@@ -70,10 +70,11 @@ import i2c
 
 fn on_receive(num_bytes int) {
     // Handle received data
-    for num_bytes > 0 {
+    mut count := num_bytes
+    for count > 0 {
         data := i2c.read()
         // Process data
-        num_bytes--
+        count--
     }
 }
 
