@@ -66,11 +66,14 @@ import spi
 
 spi.begin()                       // Initialize SPI
 
-// Start transaction
-spi.begin_transaction(settings)   // Start transaction with settings
+// Configure settings and use transaction
+// Note: Use basic SPI configuration functions for simple cases
+spi.set_bit_order(MSBFIRST)
+spi.set_data_mode(SPI_MODE0)
+spi.set_clock_divider(SPI_CLOCK_DIV16)
+
 data1 := spi.transfer(0x01)       // Transfer data
 data2 := spi.transfer(0x02)       // Transfer data
-spi.end_transaction()             // End transaction
 
 spi.end()                         // Close SPI
 ```
